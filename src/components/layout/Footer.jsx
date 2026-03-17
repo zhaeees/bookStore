@@ -55,7 +55,7 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2024 온라인 서점. All rights reserved.
+            © 2026 온라인 서점. All rights reserved.
           </p>
           <p className="footer-address">
             주소: 서울특별시 강남구 테헤란로 123 | 사업자등록번호: 123-45-67890
