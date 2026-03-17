@@ -157,7 +157,7 @@
 }
 
 .action-button.favorite-active:hover {
-  background-color: var(--color-primary-dark, #0a5f38);
+  background-color: var(--color-primary-point, #0a5f38);
   color: white;
 }
 
