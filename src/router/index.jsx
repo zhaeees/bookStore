@@ -8,6 +8,7 @@
 //   * path별로 BookDetail, Search, MyPage, NotFound 매핑
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "../context/CartContext";
+import { FavoritesProvider } from "../context/FavoritesContext";
 import App from "../App";
 import HomePage from "../pages/Home/HomePage";
 import BookDetail from "../pages/BookDetail/BookDetail";
@@ -19,7 +20,8 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <Routes>
+        <FavoritesProvider>
+          <Routes>
           <Route element={<App />}>
             <Route index element={<HomePage />} />
             <Route path="/books/:id" element={<BookDetail />} />
@@ -27,7 +29,8 @@ function AppRouter() {
             <Route path="/mypage" element={<MyPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-        </Routes>
+          </Routes>
+        </FavoritesProvider>
       </CartProvider>
     </BrowserRouter>
   );

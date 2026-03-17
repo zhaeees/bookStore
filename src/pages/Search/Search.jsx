@@ -18,13 +18,14 @@ import BookList from "../../components/books/BookList";
 import BookSection from "../../components/home/BookSection";
 import { useBooks } from "../../hooks/useBooks";
 import { useCart } from "../../context/CartContext";
+import { useFavorites } from "../../context/FavoritesContext";
 import "./Search.css";
 
 function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { searchBooks } = useBooks();
   const { addToCart } = useCart();
-  const [favorites, setFavorites] = useState([]);
+  const { favorites, toggleFavorite } = useFavorites();
 
   const query = searchParams.get("q") || "";
   const category = searchParams.get("category") || "all";
@@ -64,13 +65,9 @@ function Search() {
     alert(`${book.title}이(가) 장바구니에 추가되었습니다.`);
   };
 
-  /** handleToggleFavorite: BookCard에서 "찜하기" 버튼 클릭 시 호출됨. favorites에 bookId가 있으면 제거, 없으면 추가 */
+  /** handleToggleFavorite: BookCard에서 "찜하기" 버튼 클릭 시 호출됨. 전역 찜 상태 토글 (추가 시 마이페이지 안내 경고) */
   const handleToggleFavorite = (bookId) => {
-    setFavorites((prev) =>
-      prev.includes(bookId)
-        ? prev.filter((id) => id !== bookId)
-        : [...prev, bookId]
-    );
+    toggleFavorite(bookId);
   };
 
   return (
@@ -84,6 +81,7 @@ function Search() {
           books={filteredBooks}
           onAddToCart={handleAddToCart}
           onToggleFavorite={handleToggleFavorite}
+          favoriteIds={favorites}
         />
       </BookSection>
     </div>

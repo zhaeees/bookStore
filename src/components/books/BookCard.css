@@ -149,3 +149,18 @@
 .action-button svg {
   font-size: 18px;
 }
+
+/* 찜한 상태: 배경색 + 하트 채움 */
+.action-button.favorite-active {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.action-button.favorite-active:hover {
+  background-color: var(--color-primary-dark, #0a5f38);
+  color: white;
+}
+
+.action-button.favorite-active svg {
+  fill: currentColor;
+}

@@ -20,13 +20,14 @@ import BookList from "../../components/books/BookList";
 import BookSection from "../../components/home/BookSection";
 import { useBooks } from "../../hooks/useBooks";
 import { useCart } from "../../context/CartContext";
+import { useFavorites } from "../../context/FavoritesContext";
 import "./MyPage.css";
 
 function MyPage() {
   const [activeTab, setActiveTab] = useState("cart");
   const { books } = useBooks();
   const { cart, removeFromCart } = useCart();
-  const [favorites, setFavorites] = useState([]);
+  const { favorites, toggleFavorite } = useFavorites();
   const [orders, setOrders] = useState([]);
 
   const favoriteBooks = books.filter((book) => favorites.includes(book.id));
@@ -44,11 +45,7 @@ function MyPage() {
   };
 
   const handleToggleFavorite = (bookId) => {
-    setFavorites((prev) =>
-      prev.includes(bookId)
-        ? prev.filter((id) => id !== bookId)
-        : [...prev, bookId]
-    );
+    toggleFavorite(bookId);
   };
 
   /** renderTabContent: activeTab 값에 따라 장바구니/찜한도서/주문내역/내정보 중 해당 탭의 UI를 반환하는 함수 */
@@ -85,6 +82,7 @@ function MyPage() {
                 <BookList
                   books={cart}
                   onToggleFavorite={handleToggleFavorite}
+                  favoriteIds={favorites}
                 />
               </>
             )}
@@ -103,6 +101,7 @@ function MyPage() {
               <BookList
                 books={favoriteBooks}
                 onToggleFavorite={handleToggleFavorite}
+                favoriteIds={favorites}
               />
             )}
           </div>

@@ -17,8 +17,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { FiStar, FiShoppingCart, FiHeart, FiArrowLeft } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import { useBooks } from "../../hooks/useBooks";
 import { useCart } from "../../context/CartContext";
+import { useFavorites } from "../../context/FavoritesContext";
 import "./BookDetail.css";
 
 function BookDetail() {
@@ -26,8 +28,8 @@ function BookDetail() {
   const navigate = useNavigate();
   const { getBookById } = useBooks();
   const { addToCart } = useCart();
+  const { favorites, toggleFavorite } = useFavorites();
   const [book, setBook] = useState(null);
-  const [favorites, setFavorites] = useState([]);
 
   /** useEffect: URL의 id가 바뀔 때마다 getBookById로 해당 도서를 조회해 book 상태에 저장 */
   useEffect(() => {
@@ -64,13 +66,9 @@ function BookDetail() {
     alert(`${book.title}이(가) 장바구니에 추가되었습니다.`);
   };
 
-  /** handleToggleFavorite: "찜하기" 버튼 클릭 시 호출됨. favorites에 book.id가 있으면 제거, 없으면 추가 */
+  /** handleToggleFavorite: "찜하기" 버튼 클릭 시 호출됨. 전역 찜 상태 토글 (추가 시 마이페이지 안내 경고) */
   const handleToggleFavorite = () => {
-    setFavorites((prev) =>
-      prev.includes(book.id)
-        ? prev.filter((favId) => favId !== book.id)
-        : [...prev, book.id]
-    );
+    toggleFavorite(book.id);
   };
 
   return (
@@ -142,7 +140,7 @@ function BookDetail() {
                 }`}
                 onClick={handleToggleFavorite}
               >
-                <FiHeart className={isFavorite ? "filled" : ""} />
+                {isFavorite ? <FaHeart /> : <FiHeart />}
                 {isFavorite ? "찜한 도서" : "찜하기"}
               </button>
             </div>

@@ -149,9 +149,9 @@
 }
 
 .favorite-active {
-  background-color: var(--color-primary);
+  background-color: var(--color-success);
   color: white;
-  border-color: var(--color-primary);
+  border-color: var(--color-success);
 }
 
 .favorite-active svg {

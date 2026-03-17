@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { FiStar, FiShoppingCart, FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import "./BookCard.css";
 
-function BookCard({ book, onAddToCart, onToggleFavorite }) {
+function BookCard({ book, onAddToCart, onToggleFavorite, isFavorite = false }) {
   /** discountRate: 정가와 할인가 차이로 할인율(%) 계산. 배지 표시용 */
   const discountRate =
     book.price !== book.salePrice
@@ -51,11 +52,14 @@ function BookCard({ book, onAddToCart, onToggleFavorite }) {
           <FiShoppingCart />
         </button>
         <button
-          className="action-button"
-          onClick={() => onToggleFavorite && onToggleFavorite(book.id)}
-          aria-label="찜하기"
+          className={`action-button ${isFavorite ? "favorite-active" : ""}`}
+          onClick={(e) => {
+            e.preventDefault();
+            onToggleFavorite && onToggleFavorite(book.id);
+          }}
+          aria-label={isFavorite ? "찜 해제" : "찜하기"}
         >
-          <FiHeart />
+          {isFavorite ? <FaHeart /> : <FiHeart />}
         </button>
       </div>
     </div>
