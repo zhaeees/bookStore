@@ -1,0 +1,10 @@
+[
+  { "id": "all", "name": "전체", "icon": "all" },
+  { "id": "자기계발", "name": "자기계발", "icon": "self" },
+  { "id": "경제/경영", "name": "경제/경영", "icon": "business" },
+  { "id": "역사", "name": "역사", "icon": "history" },
+  { "id": "에세이", "name": "에세이", "icon": "essay" },
+  { "id": "문학", "name": "문학", "icon": "literature" },
+  { "id": "시", "name": "시", "icon": "poem" },
+  { "id": "종합", "name": "종합", "icon": "all" }
+]

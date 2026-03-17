@@ -1,0 +1,16 @@
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 140px; /* 고정 헤더(상단바 + 로고영역 + 내비게이션) 높이 보정 */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 160px; /* 모바일에서 헤더가 두 줄로 줄 바꿈되는 경우 여유를 조금 더 줌 */
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "label": "수능·내신 완벽 대비",
+    "title": "수능 만점자의 선택, 능률 VOCA",
+    "subtitle": "실전에서 바로 통하는 필수 영단어로 자기계발 시작하기",
+    "image": "/images/hero01.png",
+    "link": "/search?category=자기계발"
+  },
+  {
+    "id": 2,
+    "label": "지도로 읽는 인류의 발자취",
+    "title": "지도로 보는 세계의 역사",
+    "subtitle": "지도를 따라가며 한눈에 이해하는 세계사 펀딩 프로젝트",
+    "image": "/images/hero02.png",
+    "link": "/search?q=%EC%A7%80%EB%8F%84%EB%A1%9C%20%EB%B3%B4%EB%8A%94%20%EC%84%B8%EA%B3%84%EC%9D%98%20%EC%97%AD%EC%82%AC"
+  },
+  {
+    "id": 3,
+    "label": "그래제본소 단독 펀딩",
+    "title": "무지개 목욕탕",
+    "subtitle": "동네 목욕탕의 따뜻한 이야기를 담은 한정판 제작 프로젝트",
+    "image": "/images/hero03.png",
+    "link": "/search?q=%EB%AC%B4%EC%A7%80%EA%B0%9C%20%EB%AA%A9%EC%9A%95%ED%83%95"
+  }
+]

@@ -1,0 +1,40 @@
+.not-found-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl) 0;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.not-found-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1;
+}
+
+.not-found-message {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.not-found-desc {
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+.not-found-content .btn {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 16px;
+}

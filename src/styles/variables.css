@@ -1,0 +1,33 @@
+:root {
+  --font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    Roboto, "Helvetica Neue", sans-serif;
+
+  --color-primary: #7A3E3E;
+  --color-primary-point: #b4630c;
+  --color-secondary: #C8A97E;
+  --color-accent: #ff6f98;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-text-lighter: #999999;
+  --color-border: #e0e0e0;
+  --color-background: #ffffff;
+  --color-background-light: #FFF8E7;
+  --color-error: #f72a1b;
+  --color-success: #4CAF50;
+  
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  
+  --transition: all 0.3s ease;
+}
